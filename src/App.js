@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    fetch('https://swapi.co/api/starships/').then(resp => {
+      return resp.json();
+    }).then(myJson => {
+      console.log(myJson);
+      let results = [...myJson.results];
+      results.sort((a, b) => {
+        return parseInt(a.crew, 10) > parseInt(b.crew, 10) ? 1 : -1;
+      });
+      results = results.filter(result => {
+        return parseInt(result.crew, 10) >= 10;
+      })
+      console.log(results);
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        Hello
       </div>
     );
   }
