@@ -1,0 +1,66 @@
+header {
+  padding: 10px 20px;
+  background-color: $color-black;
+  color: $color-white;
+  height: 45px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  button {
+    color: $color-white;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 4px;
+    background-color: transparent;
+    border-width: 0;
+  }
+  form {
+    position: absolute;
+    top: 7px;
+    right: 20px;
+    width: 200px;
+    transition: all 100ms linear;
+    &:focus-within {
+      width: calc(100% - 40px);
+      @media (min-width: 768px) {
+        width: 400px;
+      }
+    }
+    input {
+      width: 100%;
+    }
+  }
+  .search-results {
+    position: relative;
+    z-index: 1;
+    background-color: #e6e6e0;
+    color: black;
+    .result {
+      position: relative;
+      padding: 10px;
+      border-bottom: 1px solid $color-black;
+      height: 70px;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    .result .text {
+      width: calc(100% - 60px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 50px;
+    }
+    .result .photo-card-image {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: 50px;
+      img {
+        max-width: 100%;
+        max-height: 50px;
+      }
+    }
+  }
+}

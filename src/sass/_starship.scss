@@ -1,0 +1,46 @@
+.starship-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.starship {
+  width: 90%;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid $color-black;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .5);
+  overflow: hidden;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  vertical-align: top;
+  @media (min-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
+  @media (min-width: 1440px) {
+    width: 300px;
+  }
+  > div {
+    margin-bottom: 10px;
+  }
+  .starship-image {
+    text-align: center;
+    max-height: 180px;
+    overflow: hidden;
+    @media (min-width: 768px) {
+      height: 180px;
+    }
+  }
+  .starship-contents {
+    overflow-y: auto;
+    margin-bottom: 10px;
+    @media (min-width: 1440px) {
+      max-height: 200px;
+    }
+  }
+  .starship-name, .starship-model, .starship-nof {
+    margin-bottom: 6px;
+    span { font-weight: bold; }
+  }
+}

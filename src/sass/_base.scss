@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, arial;
+  color: $color-black;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.main-container {
+  position: relative;
+  margin-top: 45px;
+}
